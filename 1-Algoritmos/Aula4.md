@@ -61,23 +61,39 @@ Permanece igual, usando + para adição e - para subtração.
 ### Validade de Expressões Matemáticas
 
 Uma expressão matemática válida deve seguir as seguintes regras:
+
 - Todos os números devem ser separados por uma operação entre si e em relação a blocos de parênteses:
+
 -- **Válido:** <img src="https://render.githubusercontent.com/render/math?math=2%2B3">, <img src="https://render.githubusercontent.com/render/math?math=2*3"> , <img src="https://render.githubusercontent.com/render/math?math=2%2B(3)"> , <img src="https://render.githubusercontent.com/render/math?math=(2)-1">;
+
 -- **Inválido:** 2 3 , <img src="https://render.githubusercontent.com/render/math?math=2(3)"> , <img src="https://render.githubusercontent.com/render/math?math=(2)1">;
+
 - Todo o parênteses aberto deve ser fechado e um bloco não deve ser fechado sem antes ser aberto:
+
 -- **Válido:** <img src="https://render.githubusercontent.com/render/math?math=(1%2B2)">, <img src="https://render.githubusercontent.com/render/math?math=(1)">, <img src="https://render.githubusercontent.com/render/math?math=(3*2)">;
+
 -- **Inválido:** <img src="https://render.githubusercontent.com/render/math?math=(1">, <img src="https://render.githubusercontent.com/render/math?math=2%2B1)">;
+
 - Todo bloco de parênteses deve ter pelo menos um número ou outro parênteses internamente:
+
 -- **Válido:** <img src="https://render.githubusercontent.com/render/math?math=(1)"> , <img src="https://render.githubusercontent.com/render/math?math=((2%2B1))">;
+
 -- **Inválido:** <img src="https://render.githubusercontent.com/render/math?math=()"> , <img src="https://render.githubusercontent.com/render/math?math=(()"> , <img src="https://render.githubusercontent.com/render/math?math=())"> , <img src="https://render.githubusercontent.com/render/math?math=(())">;
+
 - Dois blocos de parênteses devem ser separados por uma operação matemática:
+
 -- **Válido:** <img src="https://render.githubusercontent.com/render/math?math=(2)*(3)">, <img src="https://render.githubusercontent.com/render/math?math=((2%2B3)%20*%20(4%2F5))%20%2B%20(5*4)">;
+
 -- **Inválido:** <img src="https://render.githubusercontent.com/render/math?math=(2)(3)"> , <img src="https://render.githubusercontent.com/render/math?math=((2%2B3)(4%2F5))(5*4)">;
 
 ### Ordem de Processamento de uma Expressão Matemática
 
  1. Bloco de parênteses mais interno:
+
 -- **Exemplo:** (((1º) 2º) 3º) , (((( 1º ) 2º) 3º) 4º);
+
 2. Bloco de parênteses mais à esquerda:
+
 -- **Exemplo:** (( 1º ) + ( 2º ) 3º) , ((3º)+(((1º) 2º)4º)5º)
+
 3. Números fora dos blocos de parênteses.
